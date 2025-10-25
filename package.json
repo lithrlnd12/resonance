@@ -1,0 +1,54 @@
+{
+  "name": "resonance",
+  "version": "1.0.0",
+  "description": "Resonance - AI-Powered YouTube Music Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": ["youtube", "music", "electron", "desktop", "ai"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "build": {
+    "appId": "com.resonance.app",
+    "productName": "Resonance",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "RenosanceLogo.png",
+      "package.json"
+    ],
+    "win": {
+      "target": ["portable"],
+      "icon": "assets/icon.ico",
+      "sign": false
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.music"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "assets/icon.png",
+      "category": "Audio"
+    }
+  }
+}

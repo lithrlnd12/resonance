@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resonance - Loading</title>
+  <link rel="stylesheet" href="colors.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0A1A1F 0%, #0D2328 50%, #0A1A1F 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated background particles */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      75% {
+        opacity: 0.6;
+      }
+    }
+
+    /* Logo container */
+    .logo-container {
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      animation: fadeInScale 1s ease-out forwards;
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .logo {
+      width: 300px;
+      height: auto;
+      filter: drop-shadow(0 0 30px var(--primary-glow));
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 20px var(--primary-glow));
+      }
+      50% {
+        filter: drop-shadow(0 0 40px var(--primary-glow));
+      }
+    }
+
+    /* Loading animation */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .loading-text {
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      animation: fadeInOut 2s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Sound wave loading bars */
+    .sound-wave {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      height: 40px;
+    }
+
+    .sound-bar {
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 2px;
+      animation: soundWave 1.2s ease-in-out infinite;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .sound-bar:nth-child(1) { animation-delay: 0s; }
+    .sound-bar:nth-child(2) { animation-delay: 0.1s; }
+    .sound-bar:nth-child(3) { animation-delay: 0.2s; }
+    .sound-bar:nth-child(4) { animation-delay: 0.3s; }
+    .sound-bar:nth-child(5) { animation-delay: 0.4s; }
+    .sound-bar:nth-child(6) { animation-delay: 0.3s; }
+    .sound-bar:nth-child(7) { animation-delay: 0.2s; }
+    .sound-bar:nth-child(8) { animation-delay: 0.1s; }
+
+    @keyframes soundWave {
+      0%, 100% {
+        height: 8px;
+      }
+      50% {
+        height: 40px;
+      }
+    }
+
+    /* Progress bar */
+    .progress-container {
+      width: 300px;
+      height: 3px;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-full);
+      width: 0%;
+      animation: progress 2s ease-out forwards;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    @keyframes progress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* Tagline */
+    .tagline {
+      position: absolute;
+      bottom: 60px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Fade out effect */
+    .fade-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated particles background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Main logo and loading -->
+  <div class="logo-container">
+    <img src="../RenosanceLogo.png" alt="Resonance" class="logo">
+
+    <div class="loading-container">
+      <div class="sound-wave">
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+        <div class="sound-bar"></div>
+      </div>
+
+      <p class="loading-text">LOADING</p>
+
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tagline -->
+  <p class="tagline">AI-Powered Music Experience</p>
+
+  <script>
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+
+      // Random size between 2-6px
+      const size = Math.random() * 4 + 2;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      // Random horizontal position
+      particle.style.left = `${Math.random() * 100}%`;
+
+      // Random animation delay
+      particle.style.animationDelay = `${Math.random() * 8}s`;
+
+      // Random animation duration
+      particle.style.animationDuration = `${Math.random() * 4 + 6}s`;
+
+      particlesContainer.appendChild(particle);
+    }
+
+    // Auto-close splash after loading (2 seconds)
+    setTimeout(() => {
+      document.querySelector('.logo-container').classList.add('fade-out');
+      document.querySelector('.tagline').classList.add('fade-out');
+
+      // Signal to main process that splash is done
+      setTimeout(() => {
+        if (window.electronAPI) {
+          window.electronAPI.splashDone();
+        }
+      }, 500);
+    }, 2500);
+  </script>
+</body>
+</html>
