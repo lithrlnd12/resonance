@@ -33,10 +33,15 @@ A beautiful desktop application for YouTube Music with Spotify-inspired design a
 ## Installation
 
 ### Prerequisites
-- Node.js 18+ ([Download here](https://nodejs.org/))
+- **Node.js 18+** ([Download here](https://nodejs.org/))
+  - **Windows users:** If you see `'npm' is not recognized`, see [WINDOWS_SETUP.md](./WINDOWS_SETUP.md)
 - YouTube Music Premium subscription (recommended)
 
 ### Quick Start
+
+**First time setup?** See platform-specific guides:
+- **Windows:** [WINDOWS_SETUP.md](./WINDOWS_SETUP.md) - Includes Node.js installation
+- **macOS/Linux:** Make sure Node.js is installed, then follow steps below
 
 1. **Install dependencies:**
    ```bash
