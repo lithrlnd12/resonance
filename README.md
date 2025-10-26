@@ -6,6 +6,14 @@ A beautiful desktop application for YouTube Music with Spotify-inspired design a
 
 ![Resonance Logo](./RenosanceLogo.png)
 
+## Download
+
+**🎵 Want to use Resonance?** See the [Download Guide](./DOWNLOAD.md) for installation instructions.
+
+**🔧 Want to build from source?** See the [Build Guide](./BUILD.md) for packaging instructions.
+
+---
+
 ## Features
 
 ### Current (v1.0)
@@ -32,11 +40,17 @@ A beautiful desktop application for YouTube Music with Spotify-inspired design a
 
 ## Installation
 
-### Prerequisites
+### For End Users
+
+See the [Download Guide](./DOWNLOAD.md) for pre-built installers (Windows, macOS, Linux).
+
+### For Developers
+
+#### Prerequisites
 - Node.js 18+ ([Download here](https://nodejs.org/))
 - YouTube Music Premium subscription (recommended)
 
-### Quick Start
+#### Quick Start
 
 1. **Install dependencies:**
    ```bash
