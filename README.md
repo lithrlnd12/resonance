@@ -33,14 +33,16 @@ A beautiful desktop application for YouTube Music with Spotify-inspired design a
 ## Installation
 
 ### Prerequisites
-- **Node.js 18+** ([Download here](https://nodejs.org/))
-  - **Windows users:** If you see `'npm' is not recognized`, see [WINDOWS_SETUP.md](./WINDOWS_SETUP.md)
+- **Node.js 18+** - Required to run Resonance
+  - **Windows users:** See [INSTALL_NODEJS_WINDOWS.md](./INSTALL_NODEJS_WINDOWS.md) - Simple step-by-step guide
+  - **Mac/Linux users:** [Download from nodejs.org](https://nodejs.org/)
 - YouTube Music Premium subscription (recommended)
 
 ### Quick Start
 
-**First time setup?** See platform-specific guides:
-- **Windows:** [WINDOWS_SETUP.md](./WINDOWS_SETUP.md) - Includes Node.js installation
+**First time setup?** Choose your guide:
+- **Windows (No Node.js yet):** [INSTALL_NODEJS_WINDOWS.md](./INSTALL_NODEJS_WINDOWS.md) - Start here!
+- **Windows (Have Node.js):** [WINDOWS_SETUP.md](./WINDOWS_SETUP.md) - Troubleshooting guide
 - **macOS/Linux:** Make sure Node.js is installed, then follow steps below
 
 1. **Install dependencies:**
